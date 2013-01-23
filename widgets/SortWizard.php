@@ -171,13 +171,14 @@ class SortWizard extends \Widget
 			$arrOptions[]= '<p class="tl_noopt">'.$GLOBALS['TL_LANG']['MSC']['noResult'].'</p>';
 		}
 
-        return sprintf('<div id="ctrl_%s" class="tl_sort_wizard_container tl_sort_wizard%s"><h3><label>%s%s%s%s</label></h3><input type="hidden" name="%s" value="">%s</div>%s',
+        return sprintf('<div id="ctrl_%s" class="tl_sort_wizard_container tl_sort_wizard%s"><h3><label>%s%s%s%s</label>%s</h3><input type="hidden" name="%s" value="">%s</div>%s',
         				$this->strId,
 						(($this->strClass != '') ? ' ' . $this->strClass : ''),
 						($this->required ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].'</span> ' : ''),
 						$this->strLabel,
 						($this->required ? '<span class="mandatory">*</span>' : ''),
 						$this->xlabel,
+						($this->reloadButton ? '<a href="javascript: Backend.autoSubmit('."'".$this->strTable."'".');" class="sort-wizard-update-list-button" title="'.$GLOBALS['TL_LANG']['MSC']['sort_wizard_update_list_button'].'"><img src="system/modules/sort_wizard/images/reload.gif" width="16" height="16" alt="'.$GLOBALS['TL_LANG']['MSC']['sort_wizard_update_list_button'].'" style="vertical-align:text-bottom"></a>' : ''),
 						$this->strName,
 						implode('', $arrOptions),
 						$this->wizard);
