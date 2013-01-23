@@ -99,6 +99,9 @@ class SortWizard extends \Widget
 			$GLOBALS['TL_MOOTOOLS'][] = '<script>Backend.makeParentViewSortable(".tl_sort_wizard");</script>';
 		    $GLOBALS['TL_CSS'][] = 'system/modules/sort_wizard/html/sort_wizard.css|screen';
 		}
+		
+		// Use only multiple
+		$this->multiple = true;
 
 		if (!is_array($this->varValue))
 		{
