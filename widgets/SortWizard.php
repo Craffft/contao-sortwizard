@@ -3,12 +3,12 @@
 /**
  * Contao Open Source CMS
  * 
- * Copyright (C) 2005-2012 Leo Feyer
+ * Copyright (C) 2005-2014 Leo Feyer
  * 
- * @package   SortWizard 
- * @author    Daniel Kiesel <https://github.com/icodr8> 
- * @license   LGPL 
- * @copyright Daniel Kiesel 2012-2013 
+ * @package    SortWizard 
+ * @author     Daniel Kiesel <https://github.com/icodr8> 
+ * @license    LGPL 
+ * @copyright  Daniel Kiesel 2012-2014 
  */
 
 
@@ -21,8 +21,8 @@ namespace SortWizard;
 /**
  * Class SortWizard 
  *
- * @copyright  Daniel Kiesel 2012-2013 
- * @author     Daniel Kiesel <https://github.com/icodr8> 
+ * @copyright  Daniel Kiesel 2012-2014
+ * @author     Daniel Kiesel <https://github.com/icodr8>
  * @package    SortWizard
  */
 class SortWizard extends \Widget
