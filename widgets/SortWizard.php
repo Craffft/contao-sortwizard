@@ -95,8 +95,8 @@ class SortWizard extends \Widget
 		// Add JavaScript and css
 		if (TL_MODE == 'BE')
 		{
-			$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sort_wizard/html/sort_wizard.min.js';
-		    $GLOBALS['TL_CSS'][] = 'system/modules/sort_wizard/html/sort_wizard.min.css|screen';
+			$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sort_wizard/assets/js/sort_wizard.min.js';
+		    $GLOBALS['TL_CSS'][] = 'system/modules/sort_wizard/assets/css/sort_wizard.min.css|screen';
 		}
 
 		// Use only multiple
