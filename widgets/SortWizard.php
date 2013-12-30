@@ -1,14 +1,14 @@
-<?php 
+<?php
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2014 Leo Feyer
- * 
- * @package    SortWizard 
- * @author     Daniel Kiesel <https://github.com/icodr8> 
- * @license    LGPL 
- * @copyright  Daniel Kiesel 2012-2014 
+ *
+ * @package    SortWizard
+ * @author     Daniel Kiesel <https://github.com/icodr8>
+ * @license    LGPL
+ * @copyright  Daniel Kiesel 2012-2014
  */
 
 
@@ -19,7 +19,7 @@ namespace SortWizard;
 
 
 /**
- * Class SortWizard 
+ * Class SortWizard
  *
  * @copyright  Daniel Kiesel 2012-2014
  * @author     Daniel Kiesel <https://github.com/icodr8>
@@ -95,11 +95,10 @@ class SortWizard extends \Widget
 		// Add JavaScript and css
 		if (TL_MODE == 'BE')
 		{
-			$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sort_wizard/html/sort_wizard.js';
-			$GLOBALS['TL_MOOTOOLS'][] = '<script>Backend.makeParentViewSortable(".tl_sort_wizard");</script>';
-		    $GLOBALS['TL_CSS'][] = 'system/modules/sort_wizard/html/sort_wizard.css|screen';
+			$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sort_wizard/html/sort_wizard.min.js';
+		    $GLOBALS['TL_CSS'][] = 'system/modules/sort_wizard/html/sort_wizard.min.css|screen';
 		}
-		
+
 		// Use only multiple
 		$this->multiple = true;
 
@@ -155,11 +154,11 @@ class SortWizard extends \Widget
 		// Generate options and add buttons
 		foreach ($this->arrOptions as $i=>$arrOption)
 		{
-			$strButtons = '';
+			$strButtons = \Image::getHtml('drag.gif', '', 'class="drag-handle" title="' . sprintf($GLOBALS['TL_LANG']['MSC']['move']) . '"');
 
 			foreach ($arrButtons as $strButton)
 			{
-				$strButtons .= '<a href="'.$this->addToUrl('&amp;'.$strCommand.'='.$strButton.'&amp;cid='.$i.'&amp;id='.$this->currentRecord).'" title="'.specialchars($GLOBALS['TL_LANG']['MSC']['move_'.$strButton][1]).'" onclick="Backend.SortWizard(this,\''.$strButton.'\',\'ctrl_'.$this->strId.'\');return false">'.$this->generateImage($strButton.'.gif', $GLOBALS['TL_LANG']['MSC']['move_'.$strButton][0], 'class="tl_sort_wizard_img"').'</a> ';
+				$strButtons .= '<a href="'.$this->addToUrl('&amp;'.$strCommand.'='.$strButton.'&amp;cid='.$i.'&amp;id='.$this->currentRecord).'" class="button-move" title="'.specialchars($GLOBALS['TL_LANG']['MSC']['move_'.$strButton][1]).'" onclick="Backend.SortWizard(this,\''.$strButton.'\',\'ctrl_'.$this->strId.'\');return false">'.\Image::getHtml($strButton.'.gif', $GLOBALS['TL_LANG']['MSC']['move_'.$strButton][0], 'class="tl_sort_wizard_img"').'</a> ';
 			}
 
 			$arrOptions[] = $this->generateSortfield($arrOption, $i, $strButtons);
@@ -171,7 +170,7 @@ class SortWizard extends \Widget
 			$arrOptions[]= '<p class="tl_noopt">'.$GLOBALS['TL_LANG']['MSC']['noResult'].'</p>';
 		}
 
-        return sprintf('<div id="ctrl_%s" class="tl_sort_wizard_container tl_sort_wizard%s"><h3><label>%s%s%s%s</label>%s</h3><input type="hidden" name="%s" value="">%s</div>%s',
+        return sprintf('<div id="ctrl_%s" class="tl_sort_wizard_container tl_sort_wizard%s"><h3><label>%s%s%s%s</label>%s</h3><input type="hidden" name="%s" value=""><div class="sortable">%s</div></div>%s',
         				$this->strId,
 						(($this->strClass != '') ? ' ' . $this->strClass : ''),
 						($this->required ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].'</span> ' : ''),
@@ -187,7 +186,7 @@ class SortWizard extends \Widget
 
 	/**
 	 * generateSortfield function.
-	 * 
+	 *
 	 * @access protected
 	 * @param array $arrOption
 	 * @param int $i
