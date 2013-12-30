@@ -1,9 +1,15 @@
+
 /**
- * Sort wizard
- * @param object
- * @param string
- * @param string
+ * Contao Open Source CMS
+ *
+ * Copyright (C) 2005-2014 Leo Feyer
+ *
+ * @package    SortWizard
+ * @author     Daniel Kiesel <https://github.com/icodr8>
+ * @license    LGPL
+ * @copyright  Daniel Kiesel 2012-2014
  */
+
 Backend.SortWizard = function(el, command, id) {
 	var container = $(id).getElement('.sortable'),
 		parent = $(el).getParent('span'), span;
