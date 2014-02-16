@@ -5,7 +5,7 @@
  * 
  * Copyright (C) 2005-2014 Leo Feyer
  * 
- * @package Sort_wizard
+ * @package sortwizard
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
@@ -26,5 +26,5 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Widgets
-	'SortWizard\SortWizard' => 'system/modules/sort_wizard/widgets/SortWizard.php',
+	'SortWizard\SortWizard' => 'system/modules/sortwizard/widgets/SortWizard.php',
 ));

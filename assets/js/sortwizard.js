@@ -32,7 +32,7 @@ Backend.SortWizard = function(el, command, id) {
 	}
 }
 window.addEvent('domready', function() {
-	$$('.tl_sort_wizard').each(function(el) {
+	$$('.tl_sortwizard').each(function(el) {
 		var els = el.getElement('.sortable');
 		if (els.hasClass('sortable-done')) return;
 		new Sortables(els, {

@@ -10,13 +10,13 @@
  * @copyright  Daniel Kiesel 2012-2014
  */
 
-.tl_sort_wizard_container span
+.tl_sortwizard_container span
 {
 	display: block;
 	overflow: hidden;
 }
 
-.sort-wizard-update-list-button
+.sortwizard-update-list-button
 {
 	margin-left: 2px;
 	vertical-align: middle;

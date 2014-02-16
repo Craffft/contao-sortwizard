@@ -32,6 +32,6 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MSC']['sort_wizard_update_list_button'] = 'Update list';
+$GLOBALS['TL_LANG']['MSC']['sortwizard_update_list_button'] = 'Update list';
 
 ?>
