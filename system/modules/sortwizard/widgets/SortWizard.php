@@ -6,7 +6,7 @@
  * Copyright (C) 2005-2014 Leo Feyer
  *
  * @package    SortWizard
- * @author     Daniel Kiesel <https://github.com/icodr8>
+ * @author     Daniel Kiesel <daniel@craffft.de>
  * @license    LGPL
  * @copyright  Daniel Kiesel 2012-2014
  */
@@ -22,7 +22,7 @@ namespace SortWizard;
  * Class SortWizard
  *
  * @copyright  Daniel Kiesel 2012-2014
- * @author     Daniel Kiesel <https://github.com/icodr8>
+ * @author     Daniel Kiesel <daniel@craffft.de>
  * @package    SortWizard
  */
 class SortWizard extends \Widget
